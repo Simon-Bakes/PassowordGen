@@ -4,61 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.5em;
-        }
-        #container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: rgb(38, 38, 38);
-        }
-        h1 {
-            color: white;
-            font-size: 1em;
-        }
-        button {
-            width: 180px;
-            height: 40px;
-            border-radius: 1vmax;
-            margin-top: 20px;
-        }
-        #inputBoxes {
-            color: white;
-        }
-        #outputBoxes {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        #inputBoxes {
-            color: white;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-            max-width: 400px;
-        }
-        .inputGroup {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .inputGroup label {
-            flex: 1;
-        }
-        .inputGroup input {
-            margin-left: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div id="container">
@@ -83,10 +29,19 @@
                 <label for="option5">Include Special Characters:</label>
                 <input type="checkbox" id="option5">
             </div>
+            <div class="inputGroup">
+                <label for="option0">Select All Buttons:</label>
+                <input type="checkbox" onclick="selectAll()" id="option0">
+            </div>
         </div>
         <div id="outputBoxes">
             <button id="generatePassBtn">Generate Password</button>
-            <h1 id="generatedPassOutput">Select Options</h1>    
+            <h1 id="generatedPassOutput"></h1>    
+            <div style="width: 300%; background-color: white; height: 3px;"></div>
+            <h1>Check Your Password:</h1>
+            <input type="text" id="userPassInput" placeholder="Enter Password">
+            <h1 id="checkPassOutput"></h1>
+            <button id="checkPassBtn">Check Password</button>
             <script src="pass.js"></script>
         </div>
     </div>
