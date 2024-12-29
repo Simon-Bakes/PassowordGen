@@ -7,43 +7,89 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div id="container">
-        <div id="inputBoxes">
-            <div class="inputGroup">
-                <label for="option1">Character Length:</label>
-                <input type="number" id="option1" min="8" required>
+    <main>
+        <div id="container">
+
+            <div id="topDiv">
+                <div id="divTitle">
+                    <h1>Password Generator & Checker</h1>
+                </div>
+                <div id="divPassword">
+                    <div class="buttonOptions">
+                        <div class="leftButton" id="inputBox">
+                            <input type="password" id="passwordBtn" placeholder="Enter Password">
+                        </div>
+                        <div class="rightButton" id="hideInputBox">
+                            <input type="checkbox" id="passwordBtnHide" onclick="changePasswordType()"></label>
+                        </div>
+                        <div class="rightButton" id="hideInputBox">
+                            <h1 id="strength"></h1>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="inputGroup">
-                <label for="option2">Include Lowercase Letters:</label>
-                <input type="checkbox" id="option2">
+
+            <div id="bottomDiv">
+                <div id="divOption">
+                    <div class="buttonOptions">
+                        <div class="leftButton">
+                            <input type="number" id="lengthBtn" min="1" max="64" value="8">
+                        </div>
+                        <div class="rightButton">
+                            <label for="lengthBtn">Length</label>
+                        </div>
+                    </div>
+                    <div class="buttonOptions">
+                        <div class="leftButton">
+                            <input type="checkbox" id="upperBtn" checked>
+                        </div>
+                        <div class="rightButton">
+                            <label for="upperBtn">Upper</label>
+                        </div>
+                    </div>
+                    <div class="buttonOptions">
+                        <div class="leftButton">
+                            <input type="checkbox" id="lowerBtn" checked>
+                        </div>
+                        <div class="rightButton">
+                            <label for="lowerBtn">Lower</label>
+                        </div>
+                    </div>
+                    <div class="buttonOptions">
+                        <div class="leftButton">
+                            <input type="checkbox" id="numberBtn" checked>
+                        </div>
+                        <div class="rightButton">
+                            <label for="numberBtn">Numbers</label>
+                        </div>
+                    </div>
+                    <div class="buttonOptions">
+                        <div class="leftButton">
+                            <input type="checkbox" id="specialBtn" checked>
+                        </div>
+                        <div class="rightButton">
+                            <label for="specialBtn">Special</label>
+                        </div>
+                    </div><br>
+                    <div class="buttonOptions">
+                        <div class="leftButton">
+                            <input type="button" id="selectBtn" onclick="selectAll()" style="background-color: rgb(38, 76, 247);">
+                        </div>
+                        <div class="rightButton">
+                            <label for="selectBtn">(Select All)</label>
+                        </div>
+                    </div>
+                    <div class="buttonOptions">
+                        <button onclick="generatePass()">Generate</button>
+                    </div>
+                    <div class="buttonOptions">
+                        <h1 id="output"></h1>
+                    </div>
+                </div>
             </div>
-            <div class="inputGroup">
-                <label for="option3">Include Uppercase Letters:</label>
-                <input type="checkbox" id="option3">
-            </div>
-            <div class="inputGroup">
-                <label for="option4">Include Numbers:</label>
-                <input type="checkbox" id="option4">
-            </div>
-            <div class="inputGroup">
-                <label for="option5">Include Special Characters:</label>
-                <input type="checkbox" id="option5">
-            </div>
-            <div class="inputGroup">
-                <label for="option0">Select All Buttons:</label>
-                <input type="checkbox" onclick="selectAll()" id="option0">
-            </div>
+            
         </div>
-        <div id="outputBoxes">
-            <button id="generatePassBtn">Generate Password</button>
-            <h1 id="generatedPassOutput"></h1>    
-            <div style="width: 300%; background-color: white; height: 3px;"></div>
-            <h1>Check Your Password:</h1>
-            <input type="text" id="userPassInput" placeholder="Enter Password">
-            <h1 id="checkPassOutput"></h1>
-            <button id="checkPassBtn">Check Password</button>
-            <script src="pass.js"></script>
-        </div>
-    </div>
+    </main>
+    <script src="password.js"></script>
 </body>
 </html>
